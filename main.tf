@@ -13,7 +13,7 @@ resource "local_file" "consul_service" {
 
   content = join("\n", [
     for s in each.value :
-    var.include_meta == true ? format("%s\t%v", s.node_address, s.meta) : s.node_address
+    var.include_meta == true ? format("%s\t%v", s.node_address, s.meta["boundary_org"], s.meta["boundary_project"]) : s.node_address
   ])
   filename = "${each.key}.txt"
 }

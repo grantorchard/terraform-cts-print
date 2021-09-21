@@ -42,5 +42,5 @@ variable "services" {
 variable "include_meta" {
   description = "Include service metadata in the generated files"
   type        = bool
-  default     = false
+  default     = true
 }
